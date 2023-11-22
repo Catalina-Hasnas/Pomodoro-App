@@ -7,7 +7,7 @@ export const Tabs = () => {
   return (
     <section>
       {tabsName.map((tabName) => (
-        <Tab name={tabName} />
+        <Tab key={tabName} name={tabName} />
       ))}
     </section>
   );

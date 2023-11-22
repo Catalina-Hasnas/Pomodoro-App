@@ -1,12 +1,16 @@
 import { useRecoilValue } from "recoil";
-import { activeTabTimeSelector } from "../../recoil/selectors/activeTabTime";
-import { useMemo, useState } from "react";
+import { activeTabSecondsSelector } from "../../recoil/selectors/activeTabTime";
+import { useEffect, useMemo, useState } from "react";
 
 export const Timer = () => {
-  const activeTabTime = useRecoilValue(activeTabTimeSelector);
+  const activeTabSeconds = useRecoilValue(activeTabSecondsSelector);
 
-  const [seconds, setSeconds] = useState(activeTabTime);
+  const [seconds, setSeconds] = useState(300);
   const [intervalId, setIntervalId] = useState(0);
+
+  useEffect(() => {
+    setSeconds(activeTabSeconds);
+  }, [activeTabSeconds]);
 
   const handleClick = () => {
     if (intervalId) {

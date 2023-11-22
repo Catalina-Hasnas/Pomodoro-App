@@ -1,25 +1,25 @@
 import { selector } from "recoil";
 import {
-  pomodoroTimeAtom,
-  shortBreakTimeAtom,
-  longBreakTimeAtom,
+  pomodoroSecondsAtom,
+  shortBreakSecondsAtom,
+  longBreakSecondsAtom,
 } from "../atoms/times";
 import { activeTabAtom } from "../atoms/activeTab";
 
-export const activeTabTimeSelector = selector({
-  key: "activeTabTime",
+export const activeTabSecondsSelector = selector({
+  key: "activeTabSeconds",
   get: ({ get }) => {
     const activeTab = get(activeTabAtom);
-    const pomodoroTime = get(pomodoroTimeAtom);
-    const shortBreakTime = get(shortBreakTimeAtom);
-    const longBreakTime = get(longBreakTimeAtom);
+    const pomodoroSeconds = get(pomodoroSecondsAtom);
+    const shortBreakSeconds = get(shortBreakSecondsAtom);
+    const longBreakSeconds = get(longBreakSecondsAtom);
 
-    const tabsNameTime = {
-      pomodoro: pomodoroTime,
-      "short break": shortBreakTime,
-      "long break": longBreakTime,
+    const tabsNameSeconds = {
+      pomodoro: pomodoroSeconds,
+      "short break": shortBreakSeconds,
+      "long break": longBreakSeconds,
     };
 
-    return tabsNameTime[activeTab];
+    return tabsNameSeconds[activeTab];
   },
 });
