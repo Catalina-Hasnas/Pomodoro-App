@@ -10,6 +10,7 @@ export const Tab = ({ name }: { name: TabName }) => {
       onClick={() => {
         setActiveTab(name);
       }}
+      className={`tab-button ${name === activeTab ? "active" : ""}`}
     >
       {name}
     </button>

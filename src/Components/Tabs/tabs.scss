@@ -1,0 +1,25 @@
+@use "../../css/mixins";
+
+.tabs-container {
+  background-color: var(--elements-color);
+  padding: 0.5em;
+  border-radius: 20em;
+  width: max-content;
+  margin-block-start: 3rem;
+  margin-block-end: 4rem;
+  margin-inline: auto;
+}
+
+.tab-button {
+  @include mixins.interpolate(font-size, 0.75rem, 0.875rem);
+  @include mixins.interpolate(padding-inline, 1rem, 2rem);
+  @include mixins.interpolate(padding-block, 0.5rem, 1rem);
+  border-radius: 20em;
+  color: var(--text-color);
+  // color: #d7e0ff;
+
+  &.active {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+  }
+}

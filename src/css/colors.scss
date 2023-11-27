@@ -1,0 +1,23 @@
+:root {
+  --accent-coral: #f87070;
+  --accent-cyan: #70f3f8;
+  --accent-lilac: #d881f8;
+  --text-color: #d7e0ff;
+  --background-color: #1e213f;
+  --white-color: #ffffff;
+  --input-color: #eff1fa;
+  --elements-color: #161932;
+  --accent-color: var(--accent-coral);
+}
+
+.accent-color-coral {
+  --accent-color: var(--accent-coral);
+}
+
+.accent-color-cyan {
+  --accent-color: var(--accent-cyan);
+}
+
+.accent-color-lilac {
+  --accent-color: var(--accent-lilac);
+}

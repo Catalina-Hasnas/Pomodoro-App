@@ -1,0 +1,30 @@
+@use "../../css/mixins";
+
+.timer {
+  @include mixins.interpolate((height, width), 18.75rem, 25.625rem);
+  border-radius: 50%;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: 50px 50px 100px 0px #121530, -50px -50px 100px 0px #272c5a;
+  margin: auto;
+}
+
+.timer-inner-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.85);
+  border-radius: 50%;
+  background-color: var(--elements-color);
+}
+
+.timer-display {
+  @include mixins.interpolate(font-size, 5rem, 6.25rem);
+  text-align: center;
+}
+
+.timer-button {
+  @include mixins.interpolate(font-size, 0.82031rem, 1rem);
+  letter-spacing: 0.9375rem;
+}

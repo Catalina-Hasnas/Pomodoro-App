@@ -1,0 +1,33 @@
+.open-settings-button {
+  margin-block: 4rem;
+  margin-inline: auto;
+}
+
+dialog {
+  background-color: var(--white-color);
+  border-radius: 1.5625rem;
+  border: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.7rem;
+  }
+
+  hr {
+    color: #e3e1e1;
+  }
+}
+
+.time-container {
+  display: flex;
+  gap: 1rem;
+
+  div {
+    flex: 1 1 auto;
+  }
+}

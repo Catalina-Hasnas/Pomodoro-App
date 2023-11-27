@@ -1,6 +1,7 @@
 import { useRecoilValue } from "recoil";
 import { activeTabSecondsSelector } from "../../recoil/selectors/activeTabTime";
 import { useEffect, useMemo, useState } from "react";
+import "./timer.scss";
 
 export const Timer = () => {
   const activeTabSeconds = useRecoilValue(activeTabSecondsSelector);
@@ -34,11 +35,13 @@ export const Timer = () => {
   }, [seconds]);
 
   return (
-    <div>
-      <h2>Time remaining: {timeRemaining}</h2>
-      <button onClick={handleClick}>
-        {intervalId ? "Pause countdown" : "Start countdown"}
-      </button>
+    <div className="timer">
+      <div className="timer-inner-circle">
+        <h2 className="timer-display">{timeRemaining}</h2>
+        <button className="timer-button" onClick={handleClick}>
+          {intervalId ? "PAUSE" : "START"}
+        </button>
+      </div>
     </div>
   );
 };
