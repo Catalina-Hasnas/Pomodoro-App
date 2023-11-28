@@ -1,7 +1,6 @@
-@use "../../css/mixins";
-
 .timer {
-  @include mixins.interpolate((height, width), 18.75rem, 25.625rem);
+  width: clamp(18.75rem, 50vw, 25.625rem);
+  height: clamp(18.75rem, 50vw, 25.625rem);
   border-radius: 50%;
   background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
   box-shadow: 50px 50px 100px 0px #121530, -50px -50px 100px 0px #272c5a;
@@ -20,11 +19,11 @@
 }
 
 .timer-display {
-  @include mixins.interpolate(font-size, 5rem, 6.25rem);
+  font-size: clamp(5rem, 15vw, 6.25rem);
   text-align: center;
 }
 
 .timer-button {
-  @include mixins.interpolate(font-size, 0.82031rem, 1rem);
+  font-size: clamp(0.82031rem, 3vw, 1rem);
   letter-spacing: 0.9375rem;
 }
