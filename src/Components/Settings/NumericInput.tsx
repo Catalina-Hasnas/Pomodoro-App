@@ -1,4 +1,5 @@
-import { ReactNode, forwardRef } from "react";
+import "./numericInput.scss";
+import { forwardRef } from "react";
 import { TabName } from "../Tabs";
 
 interface NumericInputProps {
@@ -12,7 +13,13 @@ export const NumericInput = forwardRef<Ref, NumericInputProps>((props, ref) => {
   return (
     <label>
       {label}
-      <input type="number" defaultValue={defaultValue} ref={ref} />
+      <input
+        className="numeric-input"
+        type="number"
+        defaultValue={defaultValue}
+        ref={ref}
+        name={label}
+      />
     </label>
   );
 });
