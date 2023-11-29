@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Kumbh Sans";
-  src: url("./assets/fonts/KumbhSans.ttf") format("truetype");
+  src: url("../assets/fonts/KumbhSans.ttf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Roboto Slab";
-  src: url("./assets/fonts/RobotoSlab.ttf") format("truetype");
+  src: url("../assets/fonts/RobotoSlab.ttf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Space Mono";
-  src: url("./assets/fonts/static/SpaceMono-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/static/SpaceMono-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 
@@ -30,13 +30,13 @@
 }
 
 .font-family-kumbh {
-  --font-family: var(--font-family-kumbh);
+  --font-family: var(--font-family-kumbh), system-ui, Arial, sans-serif;
 }
 
 .font-family-roboto {
-  --font-family: var(--font-family-roboto);
+  --font-family: var(--font-family-roboto), system-ui, Arial, sans-serif;
 }
 
 .font-family-space {
-  --font-family: var(--font-family-space);
+  --font-family: var(--font-family-space), system-ui, Arial, sans-serif;
 }

@@ -21,14 +21,83 @@ dialog {
   hr {
     color: #e3e1e1;
   }
+
+  form {
+    padding: 1.7rem;
+  }
 }
 
 .time-container {
   display: flex;
-  gap: 1rem;
-  padding: 1.7rem;
+  gap: 3rem;
 
-  div {
+  label {
     flex: 1 1 auto;
+    position: relative;
+    text-align: start;
+    width: 8.75rem;
   }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--input-color);
+    border-radius: 0.3rem;
+    border: none;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  .arrows {
+    position: absolute;
+    left: 7.5rem;
+    bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+input[type="radio"] {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="radio"]:focus {
+  outline: none;
+}
+
+.radio-input-font {
+  position: relative;
+  background-color: var(--input-color);
+}
+
+.radio-input-font::after {
+  position: relative;
+  top: 0.5em;
+  left: 0.5em;
+  content: "Aa";
+  font-family: var(--font-family);
+}
+
+.radio-input-font:checked {
+  background-color: var(--elements-color);
+  color: var(--white-color);
+}
+
+.radio-input-color {
+  position: relative;
+  background-color: var(--accent-color);
+}
+
+.radio-input-color:checked::after {
+  position: absolute;
+  top: 0.5em;
+  left: 0.7em;
+  content: "\2713";
 }

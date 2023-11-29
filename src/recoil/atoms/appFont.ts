@@ -3,5 +3,5 @@ import { Font } from "../../Components/Settings/types";
 
 export const appFont = atom<Font>({
   key: "appFont",
-  default: "Kumbh Sans",
+  default: "kumbh",
 });
