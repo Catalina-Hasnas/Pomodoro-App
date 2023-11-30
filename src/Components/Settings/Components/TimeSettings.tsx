@@ -1,3 +1,5 @@
+import "../settings.scss";
+
 import { NumericInput } from "./NumericInput";
 
 export const TimeSettings = ({
@@ -10,9 +12,16 @@ export const TimeSettings = ({
   longBreakMinutes: number;
 }) => {
   return (
-    <fieldset name="time">
-      <legend>Time (minutes)</legend>
-      <div className="time-container">
+    <div
+      className="time-section"
+      role="group"
+      aria-labelledby="time"
+      data-name="time"
+    >
+      <h3 className="legend" id="time">
+        Time (minutes)
+      </h3>
+      <div className="numeric-inputs-container">
         <NumericInput
           label="pomodoro"
           defaultValue={pomodoroMinutes}
@@ -29,6 +38,6 @@ export const TimeSettings = ({
           name="longBreak"
         />
       </div>
-    </fieldset>
+    </div>
   );
 };

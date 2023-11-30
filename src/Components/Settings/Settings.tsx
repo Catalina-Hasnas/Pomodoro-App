@@ -53,30 +53,37 @@ export const Settings = () => {
 
   return (
     <>
-      <dialog open={open} id="favDialog">
-        <header>
-          <h2> Settings</h2>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              setOpen(false);
-            }}
-            aria-label="cancel"
-          >
-            <CloseIcon />
-          </button>
-        </header>
-        <hr />
-        <form ref={formRef} method="dialog" onSubmit={onSubmit}>
-          <TimeSettings
-            pomodoroMinutes={pomodoroSeconds / 60}
-            shortBreakMinutes={shortBreakSeconds / 60}
-            longBreakMinutes={longBreakSeconds / 60}
-          />
-          <FontSettings font={font} />
-          <ColorSettings accentColor={accentColor} />
-          <button type="submit">Apply</button>
-        </form>
+      <dialog open={open}>
+        <section>
+          <header>
+            <h2> Settings</h2>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+              }}
+              aria-label="cancel"
+            >
+              <CloseIcon />
+            </button>
+          </header>
+          <hr />
+          <form ref={formRef} method="dialog" onSubmit={onSubmit}>
+            <TimeSettings
+              pomodoroMinutes={pomodoroSeconds / 60}
+              shortBreakMinutes={shortBreakSeconds / 60}
+              longBreakMinutes={longBreakSeconds / 60}
+            />
+            <hr />
+            <FontSettings font={font} />
+            <hr />
+            <ColorSettings accentColor={accentColor} />
+
+            <button className="submit-button" type="submit">
+              Apply
+            </button>
+          </form>
+        </section>
       </dialog>
       <button
         onClick={(e) => {

@@ -1,3 +1,4 @@
+import "./numericInput.scss";
 import { useRef, MouseEvent as Event } from "react";
 import { TabName } from "../../Tabs";
 import ArrowUpIcon from "../../../assets/icon-arrow-up.svg?react";
@@ -27,28 +28,30 @@ export const NumericInput = ({
   };
 
   return (
-    <label>
+    <label className="numeric-input-container">
       {label}
-      <input
-        className="numeric-input"
-        type="number"
-        defaultValue={defaultValue}
-        ref={inputRef}
-        name={name}
-      />
-      <div className="arrows">
-        <button
-          aria-label={`increment ${label} minutes by one`}
-          onClick={(e) => onIncrement(e)}
-        >
-          <ArrowUpIcon />
-        </button>
-        <button
-          aria-label={`decrement ${label} minutes by one`}
-          onClick={(e) => onDecrement(e)}
-        >
-          <ArrowDownIcon />
-        </button>
+      <div className="numeric-input">
+        <input
+          type="number"
+          defaultValue={defaultValue}
+          ref={inputRef}
+          name={name}
+          id={name}
+        />
+        <div className="arrows">
+          <button
+            aria-label={`increment ${label} minutes by one`}
+            onClick={(e) => onIncrement(e)}
+          >
+            <ArrowUpIcon />
+          </button>
+          <button
+            aria-label={`decrement ${label} minutes by one`}
+            onClick={(e) => onDecrement(e)}
+          >
+            <ArrowDownIcon />
+          </button>
+        </div>
       </div>
     </label>
   );

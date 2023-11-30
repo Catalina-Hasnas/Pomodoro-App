@@ -1,0 +1,22 @@
+.numeric-input {
+  position: relative;
+  width: 8.75rem;
+  input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--input-color);
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 0.875rem;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  .arrows {
+    position: absolute;
+    left: 7.5rem;
+    bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
