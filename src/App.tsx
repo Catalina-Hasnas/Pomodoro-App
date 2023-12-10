@@ -6,10 +6,19 @@ import "./App.scss";
 import { appAccentColor } from "./recoil/atoms/appAccentColor";
 import { useRecoilValue } from "recoil";
 import { appFont } from "./recoil/atoms/appFont";
+import { useEffect } from "react";
 
 const App = () => {
   const accentColor = useRecoilValue(appAccentColor);
   const font = useRecoilValue(appFont);
+
+  useEffect(() => {
+    if (!("Notification" in window)) {
+      console.log("Browser does not support desktop notification");
+    } else {
+      Notification.requestPermission();
+    }
+  }, []);
 
   return (
     <div
@@ -21,7 +30,6 @@ const App = () => {
         <Timer />
         <Settings />
       </main>
-      <footer></footer>
     </div>
   );
 };

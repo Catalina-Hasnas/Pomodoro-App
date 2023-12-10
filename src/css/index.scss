@@ -28,6 +28,12 @@ body {
   font-size: 1rem;
 }
 
+.absolute-centering {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 button {
   border: none;
   font-family: inherit;

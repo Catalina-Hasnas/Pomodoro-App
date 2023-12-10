@@ -2,6 +2,9 @@ import { useRecoilValue } from "recoil";
 import { activeTabSecondsSelector } from "../../recoil/selectors/activeTabTime";
 import { useEffect, useMemo, useState } from "react";
 import "./timer.scss";
+import { CircularProgress } from "./CircularProgress";
+
+const audio = new Audio("timesup.mp3");
 
 export const Timer = () => {
   const activeTabSeconds = useRecoilValue(activeTabSecondsSelector);
@@ -17,11 +20,21 @@ export const Timer = () => {
     if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(0);
-      return;
+      if (seconds === 0) {
+        setSeconds(activeTabSeconds);
+      } else {
+        return;
+      }
     }
 
     const newIntervalId = setInterval(() => {
-      setSeconds((prevSeconds) => (prevSeconds > 0 ? prevSeconds - 1 : 0));
+      setSeconds((prevSeconds) => {
+        if (prevSeconds === 1) {
+          audio.play();
+          new Notification("Time's up!");
+        }
+        return prevSeconds > 0 ? prevSeconds - 1 : 0;
+      });
     }, 1000);
     setIntervalId(newIntervalId);
   };
@@ -37,10 +50,13 @@ export const Timer = () => {
   return (
     <div className="timer">
       <div className="timer-inner-circle">
-        <h2 className="timer-display">{timeRemaining}</h2>
-        <button className="timer-button" onClick={handleClick}>
-          {intervalId ? "PAUSE" : "START"}
-        </button>
+        <CircularProgress percent={(seconds / activeTabSeconds) * 100} />
+        <div className="timer-text absolute-centering">
+          <h2 className="timer-display">{timeRemaining}</h2>
+          <button className="timer-button" onClick={handleClick}>
+            {!intervalId ? "START" : seconds === 0 ? "RESTART" : "PAUSE"}
+          </button>
+        </div>
       </div>
     </div>
   );

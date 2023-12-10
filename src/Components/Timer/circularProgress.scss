@@ -1,0 +1,15 @@
+#svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: transparent;
+  stroke-width: 0.2rem;
+  stroke-linecap: round;
+}
+#svg #bar {
+  stroke: var(--accent-color);
+}
+#cont {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

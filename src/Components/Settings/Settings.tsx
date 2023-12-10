@@ -93,6 +93,7 @@ export const Settings = () => {
         id="showDialog"
         className="open-settings-button"
         aria-label="Open Settings"
+        style={{ zIndex: 5 }}
       >
         <SettingsIcon />
       </button>
