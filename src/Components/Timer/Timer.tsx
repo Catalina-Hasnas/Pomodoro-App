@@ -17,6 +17,11 @@ export const Timer = () => {
   }, [activeTabSeconds]);
 
   const handleClick = () => {
+    if (!("Notification" in window)) {
+      console.log("Browser does not support desktop notification");
+    } else {
+      Notification.requestPermission();
+    }
     if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(0);
