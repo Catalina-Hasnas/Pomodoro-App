@@ -18,15 +18,7 @@ export const CircularProgress = ({ percent }: { percent: number }) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle
-          r={radius}
-          cx={xy}
-          cy={xy}
-          fill="transparent"
-          strokeDasharray={dashArr}
-          strokeDashoffset="0"
-        ></circle>
-        <circle
-          id="bar"
+          id="circle"
           r={radius}
           cx={xy}
           cy={xy}
