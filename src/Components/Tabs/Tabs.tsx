@@ -6,10 +6,10 @@ const tabsName: TabName[] = ["pomodoro", "short break", "long break"];
 
 export const Tabs = () => {
   return (
-    <section className="tabs-container">
+    <div className="tabs-container">
       {tabsName.map((tabName) => (
         <Tab key={tabName} name={tabName} />
       ))}
-    </section>
+    </div>
   );
 };

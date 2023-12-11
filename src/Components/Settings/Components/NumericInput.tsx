@@ -28,8 +28,8 @@ export const NumericInput = ({
   };
 
   return (
-    <label className="numeric-input-container">
-      {label}
+    <div className="numeric-input-container">
+      <label htmlFor={name}>{label}</label>
       <div className="numeric-input">
         <input
           type="number"
@@ -53,6 +53,6 @@ export const NumericInput = ({
           </button>
         </div>
       </div>
-    </label>
+    </div>
   );
 };
