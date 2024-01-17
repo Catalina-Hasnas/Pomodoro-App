@@ -6,6 +6,13 @@ import { appAccentColor } from "./recoil/atoms/appAccentColor";
 import { useRecoilValue } from "recoil";
 import { appFont } from "./recoil/atoms/appFont";
 import { Timer } from "@catalinahasnas/react-timer-component";
+import { AccentColor } from "./Components/Settings/types";
+
+const accentColorCode: Record<AccentColor, string> = {
+  coral: "#f87070",
+  cyan: "#70f3f8",
+  lilac: "#d881f8",
+};
 
 const App = () => {
   const accentColor = useRecoilValue(appAccentColor);
@@ -19,6 +26,7 @@ const App = () => {
       <main>
         <Tabs />
         <Timer
+          accentColor={accentColorCode[accentColor]}
           seconds={300}
           timerStyles={{
             background: "linear-gradient(315deg, #2e325a 0%, #0e112a 100%)",
