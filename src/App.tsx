@@ -37,6 +37,7 @@ const App = () => {
             margin: "auto",
           }}
           width="clamp(18.75rem, 50vw, 25.625rem)"
+          sendBrowserNotification
         />
         <Settings />
       </main>
