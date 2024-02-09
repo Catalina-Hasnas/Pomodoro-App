@@ -7,6 +7,7 @@ import { useRecoilValue } from "recoil";
 import { appFont } from "./recoil/atoms/appFont";
 import { Timer } from "@catalinahasnas/react-timer-component";
 import { AccentColor } from "./Components/Settings/types";
+import { activeTabSecondsSelector } from "./recoil/selectors/activeTabTime";
 
 const accentColorCode: Record<AccentColor, string> = {
   coral: "#f87070",
@@ -17,6 +18,7 @@ const accentColorCode: Record<AccentColor, string> = {
 const App = () => {
   const accentColor = useRecoilValue(appAccentColor);
   const font = useRecoilValue(appFont);
+  const activeTabSeconds = useRecoilValue(activeTabSecondsSelector);
 
   return (
     <div
@@ -27,7 +29,7 @@ const App = () => {
         <Tabs />
         <Timer
           accentColor={accentColorCode[accentColor]}
-          seconds={300}
+          seconds={activeTabSeconds}
           timerStyles={{
             background: "linear-gradient(315deg, #2e325a 0%, #0e112a 100%)",
             "box-shadow":
