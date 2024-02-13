@@ -144,9 +144,28 @@ const handleClick = () => {
 }
 ```
 
+5. Exporting the Timer Component to a Library and using that
+
+```js
+import { Timer } from "@catalinahasnas/react-timer-component";
+
+<Timer
+  accentColor={accentColorCode[accentColor]}
+  seconds={activeTabSeconds}
+  timerStyles={{
+    background: "linear-gradient(315deg, #2e325a 0%, #0e112a 100%)",
+    "box-shadow": "50px 50px 100px 0px #121530, -50px -50px 100px 0px #272c5a", margin: "auto",
+  }}
+  width="clamp(18.75rem, 50vw, 25.625rem)"
+  sendBrowserNotification
+/>
+```
+
 ### Continued development
 
 Future plans are to improve the Timer Component and export it as a small library.
+
+UPDATE: Already did that! You can find the [React Timer Component Library here](https://github.com/Catalina-Hasnas/react-timer-component)
 
 ### Useful resources
 
